@@ -2,6 +2,10 @@ import * as React from 'react';
 import styles from './SliderHeader.module.scss';
 import type { ISliderHeaderProps } from './ISliderHeaderProps';
 import { escape } from '@microsoft/sp-lodash-subset';
+import 'primeicons/primeicons.css'; // Iconos de PrimeReact
+import 'primereact/resources/primereact.css'; // Estilos principales de PrimeReact
+import 'primereact/resources/themes/lara-dark-green/theme.css';
+import 'primeflex/primeflex.css';
 
 export default class SliderHeader extends React.Component<ISliderHeaderProps> {
   public render(): React.ReactElement<ISliderHeaderProps> {
