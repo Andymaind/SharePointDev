@@ -3,7 +3,7 @@ import * as ReactDom from 'react-dom';
 import { Version } from '@microsoft/sp-core-library';
 import {
   type IPropertyPaneConfiguration,
-  IPropertyPaneField  
+  IPropertyPaneField
 } from '@microsoft/sp-property-pane';
 import { BaseClientSideWebPart } from '@microsoft/sp-webpart-base';
 import { IReadonlyTheme } from '@microsoft/sp-component-base';
@@ -12,10 +12,12 @@ import SliderHeader from './components/SliderHeader';
 import { ISliderHeaderProps } from './components/ISliderHeaderProps';
 import { ISliderHeaderInfo } from './ISliderHeaderInfo';
 import { PropertyFieldCollectionData, CustomCollectionFieldType } from '@pnp/spfx-property-controls/lib/PropertyFieldCollectionData';
+/*import { PropertyFieldFilePicker, IPropertyFieldFilePickerProps } from '@pnp/spfx-property-controls/lib/PropertyFieldFilePicker';*/
 import 'primeicons/primeicons.css'; // Iconos de PrimeReact
 import 'primereact/resources/primereact.css'; // Estilos principales de PrimeReact
 import 'primereact/resources/themes/lara-dark-green/theme.css';
 import 'primeflex/primeflex.css';
+import CustomFilePickerField from './components/CustomFilePickerField'; // Asegúrate que el path sea correcto
 
 
 export interface ISliderHeaderWebPartProps {
@@ -39,7 +41,7 @@ export default class SliderHeaderWebPart extends BaseClientSideWebPart<ISliderHe
         environmentMessage: this._environmentMessage,
         hasTeamsContext: !!this.context.sdks.microsoftTeams,
         userDisplayName: this.context.pageContext.user.displayName,
-        item: this.properties.collectionData? this.properties.collectionData : [],
+        item: this.properties.collectionData ? this.properties.collectionData : [],
       }
     );
 
@@ -114,7 +116,7 @@ export default class SliderHeaderWebPart extends BaseClientSideWebPart<ISliderHe
 
   protected getPropertyPaneConfiguration(): IPropertyPaneConfiguration {
 
-    
+
 
     let webpartOptions: IPropertyPaneField<any>[] = [];
 
@@ -152,6 +154,21 @@ export default class SliderHeaderWebPart extends BaseClientSideWebPart<ISliderHe
                 { key: '_parent', text: '_parent' },
                 { key: '_top', text: '_top' }
               ]
+            },
+            {
+              id: 'backgroundImage',
+              title: 'Background Image',
+              type: CustomCollectionFieldType.custom,
+              onCustomRender: (field: any, value: any, onUpdate: any, item: any, itemId: any, onError: any) => {
+                return React.createElement(CustomFilePickerField, {
+                  value: value,
+                  context: this.context,
+                  onChange: (newValue: string) => {
+                    onUpdate(field.id, newValue);
+                    onError(field.id, "");
+                  }
+                });
+              }
             }
           ],
           disabled: false

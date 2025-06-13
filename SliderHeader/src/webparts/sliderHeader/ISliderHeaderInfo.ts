@@ -3,6 +3,8 @@ export interface ISliderHeaderInfo {
   subtitle: string;
   backgroundImageUrl: string;
   target: linkTarget;
+  backgroundImage?: string;
+  link?: string;
 }
 
 export enum linkTarget {
