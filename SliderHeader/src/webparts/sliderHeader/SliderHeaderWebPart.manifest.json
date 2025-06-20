@@ -19,11 +19,12 @@
   "preconfiguredEntries": [{
     "groupId": "5c03119e-3074-46fd-976b-c60198311f70", // Advanced
     "group": { "default": "Advanced" },
-    "title": { "default": "SliderHeader" },
-    "description": { "default": "SliderHeader description" },
-    "officeFabricIconFontName": "Page",
+    "title": { "default": "WebPart Banner Slider" },
+    "description": { "default": "WebPart Banner tipo Slider que permite mostrar una colección de imágenes con títulos y enlaces." },
+
+    "iconImageUrl": "data:image/png;base64,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",
     "properties": {
-      "description": "SliderHeader"
+      "description": "WebPart Banner Slider"
     }
   }]
 }
