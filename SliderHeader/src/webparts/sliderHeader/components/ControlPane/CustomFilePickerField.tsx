@@ -19,8 +19,8 @@ const CustomFilePickerField: React.FC<ICustomFilePickerFieldProps> = ({ value, o
           onChange(firstFile?.fileAbsoluteUrl || '');
         }}
         hideRecentTab={true}
-        hideStockImages={true}
-        hideWebSearchTab={true}
+        hideStockImages={false}
+        hideWebSearchTab={false}
         hideLocalMultipleUploadTab={true}
         hideLocalUploadTab={true}
         hideOneDriveTab={true}

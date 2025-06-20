@@ -1,0 +1,29 @@
+.p-galleria.p-galleria-indicator-onitem .p-galleria-indicators{
+    background: transparent !important;
+}
+.p-galleria .p-galleria-caption {
+    background: linear-gradient(0deg, black, transparent) !important;
+    color: #f8f9fa !important;
+    padding: 1rem !important;
+}
+.p-galleria .p-galleria-item-nav{
+    /*background: linear-gradient(45deg, #00000052, transparent);*/
+    border-radius: 100px;
+    color: #f8f9fa;
+    height: 3rem;
+    
+    transition: background-color .2s, color .2s, box-shadow .2s;
+    width: 3rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.p-galleria .p-galleria-item-nav:hover{
+    background: linear-gradient(45deg, #000000a6, transparent);
+    color: #f8f9fa;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.p-galleria .p-galleria-item-nav .p-galleria-item-next-icon.p-icon, .p-galleria .p-galleria-item-nav .p-galleria-item-prev-icon.p-icon {
+    height: 1rem;
+    width: 1rem;
+}

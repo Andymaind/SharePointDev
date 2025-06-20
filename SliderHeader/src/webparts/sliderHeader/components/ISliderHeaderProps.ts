@@ -7,4 +7,8 @@ export interface ISliderHeaderProps {
   hasTeamsContext: boolean;
   userDisplayName: string;
   item: ISliderHeaderInfo[];
+  altura: number;
+  TamañoText: number;
+  brillo: number;
+  vercaptions: boolean;
 }
